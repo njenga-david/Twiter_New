@@ -1,0 +1,7 @@
+<div class="tweet-box">
+    <form [formGroup]="tweetForm" (ngSubmit)="submitTweet()">
+      <textarea formControlName="tweet" placeholder="What's happening?"></textarea>
+      <button type="submit">Tweet</button>
+    </form>
+  </div>
+  

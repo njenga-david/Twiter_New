@@ -1,0 +1,28 @@
+.post-container {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    padding: 20px;
+  }
+  
+  .post-container h2 {
+    font-size: 20px;
+    color: #333333;
+    margin-bottom: 10px;
+  }
+  
+  .post-container p {
+    font-size: 16px;
+    color: #666666;
+    margin-bottom: 15px;
+  }
+  
+  .show-comments-button {
+    background: none;
+    border: none;
+    color: #1da1f2;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  

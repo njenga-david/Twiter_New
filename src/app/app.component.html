@@ -1,0 +1,50 @@
+<div class="container">
+  <!-- Search and Select User Section -->
+  <div class="search-container">
+    <label for="userSelect">Select User:</label>
+    <select id="userSelect" [(ngModel)]="selectedUserId" (change)="selectUser(selectedUserId)">
+      <option *ngFor="let user of users" [value]="user.id">{{ user.name }}</option>
+    </select>
+  </div>
+
+  <!-- Profile Information Section -->
+  <div class="profile-container" *ngIf="selectedUser">
+    <div class="profile-details">
+      <img class="profile-pic" [src]="'assets/profile-pic.jpg'" alt="Profile Picture">
+      <div class="profile-info">
+        <h1>{{ selectedUser.name }}</h1>
+        <p><strong>Email:</strong> {{ selectedUser.email }}</p>
+        <p><strong>Phone:</strong> {{ selectedUser.phone }}</p>
+        <p><strong>Website:</strong> {{ selectedUser.website }}</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Posts Section -->
+  <div class="posts-container">
+    <div *ngFor="let post of posts" class="post">
+      <h2>{{ post.title }}</h2>
+      <p>{{ post.body }}</p>
+      <button (click)="toggleComments(post.id)">
+        <i class="fas fa-comment"></i> {{ showComments[post.id] ? 'Hide Comments' : 'Show Comments' }}
+      </button>
+      <div *ngIf="showComments[post.id]">
+        <div *ngFor="let comment of comments[post.id]" class="comment">
+          <div class="comment-content">
+            <img class="comment-profile-pic" src="Assets/morris.jpg" alt="Commenter Profile Picture">
+            <div class="comment-details">
+              <p><strong>{{ comment.name }}</strong> ({{ comment.email }})</p>
+              <p>{{ comment.body }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tweet Box Section -->
+  <div class="tweet-box">
+    <h3>Tweet Something</h3>
+    <!-- Add tweet form here -->
+  </div>
+</div>
